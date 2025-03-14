@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Passport OCR{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cropper.min.css') }}">
+
+    <!-- Block for additional styles or links -->
+    {% block head %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">Afghan Passport MRZ OCR</a>
+            <ul class="navbar-links">
+                <li><a href="/">Upload Image</a></li>
+                <li><a href="/capture">Capture Image</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cropper.min.js') }}"></script>
+
+
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

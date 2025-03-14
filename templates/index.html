@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Passport OCR{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="grid">
+        <!-- Image Selection Area -->
+        <div class="image-upload-area">
+            <div id="previewContainer">
+                <img id="imagePreview" src="#" alt="Image Preview" style="display: none;">
+            </div>
+            <div class="header">
+                <div class="file-upload-btns">
+                    <input type="file" id="imageUpload" accept="image/*">
+                    <button id="submitBtn" style="display:none;">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- OCR Result Area -->
+        <div class="ocr-result-area">
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <!-- Loading Spinner -->
+                <div class="spinner"></div>
+            </div>
+            <div id="resultContainer" style="display: none;">
+                <h3>OCR MRZ Result</h3>
+                <div id="ocrResult">
+                    <!-- Result Table will be inserted here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

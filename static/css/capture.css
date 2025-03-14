@@ -1,0 +1,66 @@
+/* Specific Styles for capture.html */
+
+.camera-container {
+    width: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    width: 100%;
+    height: 60vh;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+canvas {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+#imagePreview {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    max-height: 60vh; /* Set maximum height equal to the height of the video container */
+    overflow: hidden; /* Prevent the cropper from overflowing */
+}
+
+#capturedImage {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.ocr-result-area {
+    width: 30%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 450px;
+}

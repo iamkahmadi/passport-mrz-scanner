@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Capture Image - Passport OCR{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/capture.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="camera-container col-9">
+        <video id="video" width="100%" height="80vh" style="display: block;"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <!-- Image preview for cropping, initially hidden -->
+        <div id="imagePreview" style="display: none;">
+            <img id="capturedImage" src="" alt="Captured Image" />
+        </div>
+
+        <div class="buttons">
+            <button id="startBtn">Start Camera</button>
+            <button id="stopBtn" disabled>Stop Camera</button>
+            <button id="captureBtn" disabled>Capture</button>
+            <button id="submitBtn" disabled>Submit</button>
+            <button id="startOverBtn" disabled>Start Over</button>
+        </div>
+    </div>
+    <div class="ocr-result-area">
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <!-- Loading Spinner -->
+            <div class="spinner"></div>
+        </div>
+        <div id="resultContainer" style="display: none;">
+            <h3>OCR MRZ Result</h3>
+            <div id="ocrResult">
+                <!-- Result Table will be inserted here dynamically -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/capture.js') }}"></script>
+{% endblock %}
